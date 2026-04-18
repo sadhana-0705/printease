@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import ProtectedRoute from "../components/common/ProtectedRoute";
 
 /* Auth pages */
@@ -34,18 +34,18 @@ function Home() {
             Print your documents easily from nearby net centres
           </p>
           <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center flex-grow">
-            <a 
-              href="/login" 
+            <Link 
+              to="/login" 
               className="px-6 py-3 bg-[#4a90e2] text-white rounded-lg font-medium hover:bg-[#357abd] transition-colors inline-block w-full sm:w-auto text-center"
             >
               Login
-            </a>
-            <a 
-              href="/register" 
+            </Link>
+            <Link 
+              to="/register" 
               className="px-6 py-3 bg-[#50c878] text-white rounded-lg font-medium hover:bg-[#3aa15f] transition-colors inline-block w-full sm:w-auto text-center"
             >
               Register
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -5,8 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   const backendUrl = (env.VITE_API_URL || "http://localhost:5000").replace(/\/$/, "");
+  const publicBase = (env.VITE_PUBLIC_BASE || "/").trim();
 
   return {
+    base: publicBase.endsWith("/") ? publicBase : `${publicBase}/`,
     plugins: [react()],
     css: {
       postcss: "./postcss.config.js",
