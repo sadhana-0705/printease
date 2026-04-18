@@ -1,0 +1,8 @@
+services:
+  - type: web
+    runtime: node
+    name: printease
+    plan: free
+    buildCommand: npm --prefix backend install && npm --prefix frontend install && npm --prefix frontend run build
+    startCommand: npm --prefix backend start
+    healthCheckPath: /api/health

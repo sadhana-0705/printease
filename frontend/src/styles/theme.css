@@ -1,0 +1,332 @@
+/* -----------------------------
+   Enhanced Card Styles
+------------------------------ */
+.card {
+  border: 1px solid var(--neutral-200);
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--neutral-50), var(--primary-50));
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.2);
+  border-color: var(--primary-300);
+}
+
+/* -----------------------------
+   Enhanced Status badge styles
+------------------------------ */
+.badge-pending {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+  border: 1px solid #fbbf24;
+  box-shadow: 0 2px 4px rgba(251, 191, 36, 0.2);
+}
+
+.badge-accepted {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1e3a8a;
+  border: 1px solid #60a5fa;
+  box-shadow: 0 2px 4px rgba(96, 165, 250, 0.2);
+}
+
+.badge-printing {
+  background: linear-gradient(135deg, #cffafe, #a5f3fc);
+  color: #0e7490;
+  border: 1px solid #06b6d4;
+  box-shadow: 0 2px 4px rgba(8, 145, 178, 0.2);
+}
+
+.badge-ready {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  color: #14532d;
+  border: 1px solid #4ade80;
+  box-shadow: 0 2px 4px rgba(74, 222, 128, 0.2);
+}
+
+.badge-completed {
+  background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+  color: #4c1d95;
+  border: 1px solid #8b5cf6;
+  box-shadow: 0 2px 4px rgba(139, 92, 246, 0.2);
+}
+
+.badge-rejected {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #7f1d1d;
+  border: 1px solid #ef4444;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
+}
+
+.badge-cancelled {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  color: #374151;
+  border: 1px solid #9ca3af;
+  box-shadow: 0 2px 4px rgba(156, 163, 175, 0.2);
+}
+
+/* -----------------------------
+   Improved Button Styles
+------------------------------ */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.2);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-600), var(--primary-700));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(14, 165, 233, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--secondary-500), var(--secondary-600));
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(20, 184, 166, 0.2);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, var(--secondary-600), var(--secondary-700));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(20, 184, 166, 0.3);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent-500), var(--accent-600));
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(139, 92, 246, 0.2);
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, var(--accent-600), var(--accent-700));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.3);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.2);
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--neutral-700);
+  border: 2px solid var(--neutral-300);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--neutral-100);
+  border-color: var(--primary-400);
+  color: var(--primary-700);
+}
+
+
+
+/* -----------------------------
+   Input Field Styles
+------------------------------ */
+.input-field {
+  border: 2px solid var(--neutral-300);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  background: var(--neutral-50);
+  padding: 0.75rem;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+  background: white;
+}
+
+.input-field:hover {
+  border-color: var(--primary-400);
+}
+
+/* -----------------------------
+   Gradient Backgrounds
+------------------------------ */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--primary-400), var(--primary-500), var(--accent-400));
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, var(--secondary-400), var(--secondary-500), var(--primary-300));
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, var(--accent-400), var(--accent-500), var(--secondary-400));
+}
+
+.bg-gradient-neutral {
+  background: linear-gradient(135deg, var(--neutral-100), var(--neutral-200), var(--primary-50));
+}
+
+/* -----------------------------
+   Page Background Variants
+------------------------------ */
+.page-bg-student {
+  background: linear-gradient(135deg, var(--primary-50) 0%, var(--secondary-50) 50%, var(--neutral-50) 100%);
+}
+
+.page-bg-netcentre {
+  background: linear-gradient(135deg, var(--accent-50) 0%, var(--primary-50) 50%, var(--secondary-50) 100%);
+}
+
+.page-bg-auth {
+  background: linear-gradient(135deg, var(--secondary-50) 0%, var(--accent-50) 50%, var(--primary-50) 100%);
+}
+
+/* -----------------------------
+   Modal animation (smooth)
+------------------------------ */
+.modal-enter {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-overlay {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+/* -----------------------------
+   Notification popup polish
+------------------------------ */
+.notification {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 0.75rem;
+  font-weight: 500;
+  border-left: 4px solid;
+}
+
+.notification-success {
+  background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+  border-left-color: #4ade80;
+  color: #14532d;
+}
+
+.notification-error {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  border-left-color: #ef4444;
+  color: #7f1d1d;
+}
+
+.notification-warning {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border-left-color: #fbbf24;
+  color: #92400e;
+}
+
+.notification-info {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border-left-color: #60a5fa;
+  color: #1e3a8a;
+}
+
+/* -----------------------------
+   Utility helpers
+------------------------------ */
+.text-muted {
+  color: var(--neutral-500);
+}
+
+.text-primary {
+  color: var(--primary-600);
+}
+
+.text-secondary {
+  color: var(--secondary-600);
+}
+
+.text-accent {
+  color: var(--accent-600);
+}
+
+.section-gap {
+  margin-top: 1.5rem;
+}
+
+/* -----------------------------
+   Page Container Styles
+------------------------------ */
+.page-container {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* -----------------------------
+   Loading States
+------------------------------ */
+.loading-spinner {
+  border: 3px solid var(--neutral-200);
+  border-top: 3px solid var(--primary-500);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* -----------------------------
+   Hover Effects
+------------------------------ */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+  border-color: var(--primary-400);
+}
