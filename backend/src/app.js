@@ -21,9 +21,8 @@ if (!fs.existsSync(logsDirPath)) {
   fs.mkdirSync(logsDirPath, { recursive: true });
 }
 
-const frontendDistPath = path.join(__dirname, "../../frontend/dist");
+const frontendDistPath = path.resolve(__dirname, "../../frontend/dist");
 const frontendIndexPath = path.join(frontendDistPath, "index.html");
-const hasFrontendBuild = fs.existsSync(frontendIndexPath);
 
 app.use(cors());
 app.use(express.json());
@@ -41,26 +40,20 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
 });
 
-if (hasFrontendBuild) {
-  app.use(express.static(frontendDistPath));
+// Static serving
+app.use(express.static(frontendDistPath));
 
-  app.get(/^(?!\/api|\/uploads).*/, (req, res) => {
-    res.sendFile(frontendIndexPath);
-  });
-} else {
-  app.get("/", (req, res) => {
-    res.send("PrintEase Backend Running");
-  });
-}
-
-app.use((req, res, next) => {
-  if (req.url.startsWith("/api/")) {
-    return res
-      .status(404)
-      .json({ message: `Route ${req.method} ${req.url} not found` });
+// SPA Fallback: Send index.html for any request that doesn't match an API or static file
+app.get("*", (req, res) => {
+  if (req.url.startsWith("/api/") || req.url.startsWith("/uploads/")) {
+    return res.status(404).json({ message: "Not Found" });
   }
-
-  return next();
+  
+  if (fs.existsSync(frontendIndexPath)) {
+    res.sendFile(frontendIndexPath);
+  } else {
+    res.send("PrintEase Backend Running (Frontend build not found)");
+  }
 });
 
 app.use(errorHandler);

@@ -3,12 +3,16 @@ services:
     runtime: node
     name: printease
     plan: free
-    rootDir: backend
-    buildCommand: cd ../frontend && npm install && npm run build && cd ../backend && npm install
-    startCommand: npm start
+    rootDir: .
+    buildCommand: npm install --prefix frontend --production=false && npm run build --prefix frontend && npm install --prefix backend
+    startCommand: npm --prefix backend start
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 5000
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
