@@ -44,7 +44,7 @@ app.get("/api/health", (req, res) => {
 app.use(express.static(frontendDistPath));
 
 // SPA Fallback: Send index.html for any request that doesn't match an API or static file
-app.get("*", (req, res) => {
+app.get("(.*)", (req, res) => {
   if (req.url.startsWith("/api/") || req.url.startsWith("/uploads/")) {
     return res.status(404).json({ message: "Not Found" });
   }
