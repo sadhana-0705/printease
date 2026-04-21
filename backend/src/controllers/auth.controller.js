@@ -13,6 +13,24 @@ exports.register = async (req, res, next) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
+    const locationData = {
+      lat: null,
+      lng: null
+    };
+
+    if (
+      location &&
+      typeof location.lat === "number" &&
+      typeof location.lng === "number" &&
+      location.lat >= -90 &&
+      location.lat <= 90 &&
+      location.lng >= -180 &&
+      location.lng <= 180
+    ) {
+      locationData.lat = location.lat;
+      locationData.lng = location.lng;
+    }
+
     const user = await User.create({
       name,
       email,
@@ -20,10 +38,7 @@ exports.register = async (req, res, next) => {
       address: address || "",
       role,
       netCentreId: role !== "student" ? netCentreId : null,
-      location: {
-        lat: location?.lat ?? null,
-        lng: location?.lng ?? null
-      }
+      location: locationData
     });
 
     res.status(201).json({
@@ -45,7 +60,11 @@ exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email });
+    if (typeof email !== "string" || typeof password !== "string") {
+      return res.status(400).json({ message: "Invalid credentials" });
+    }
+
+    const user = await User.findOne({ email: email.trim() });
     if (!user) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
@@ -62,7 +81,7 @@ exports.login = async (req, res, next) => {
         netCentreId: user.netCentreId || null
       },
       process.env.JWT_SECRET,
-      { expiresIn: "7d" }
+      { expiresIn: process.env.JWT_EXPIRES_IN || "7d" }
     );
 
     res.json({

@@ -39,6 +39,29 @@ export default function StudentDashboard() {
           <div className="p-1">
             <div className="bg-[#4a90e2] rounded-full w-12 h-12 flex items-center justify-center mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m9-13V3a2 2 0 00-2-2H9a2 2 0 00-2 2v0m8 0v0m0 0v8m0-8l-3 3m3-3l-3 3m6-3H9" />
+              </svg>
+            </div>
+            <h2 className="text-xl font-semibold mb-2 text-neutral-800">Upload Documents</h2>
+            <p className="text-neutral-600 mb-4">
+              Upload and manage your documents before creating orders.
+            </p>
+            <Link
+              to="/student/upload"
+              className="inline-flex items-center text-[#4a90e2] font-medium hover:text-[#357abd] transition-colors"
+            >
+              Upload Documents
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </Card>
+
+        <Card className="card-hover hover-lift">
+          <div className="p-1">
+            <div className="bg-[#4a90e2] rounded-full w-12 h-12 flex items-center justify-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
               </svg>
             </div>

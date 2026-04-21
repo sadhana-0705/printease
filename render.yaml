@@ -3,6 +3,12 @@ services:
     runtime: node
     name: printease
     plan: free
-    buildCommand: npm --prefix backend install && npm --prefix frontend install && npm --prefix frontend run build
-    startCommand: npm --prefix backend start
+    rootDir: backend
+    buildCommand: cd ../frontend && npm install && npm run build && cd ../backend && npm install
+    startCommand: npm start
     healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000

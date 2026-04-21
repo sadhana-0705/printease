@@ -12,3 +12,13 @@ export const uploadFile = async (file) => {
 
   return res.data;
 };
+
+export const getMyDocuments = async () => {
+  const res = await api.get("/upload/my");
+  return res.data;
+};
+
+export const deleteDocument = async (documentId) => {
+  const res = await api.delete(`/upload/${documentId}`);
+  return res.data;
+};

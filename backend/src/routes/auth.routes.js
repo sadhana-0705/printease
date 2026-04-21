@@ -12,6 +12,7 @@ const {
   updateLocation
 } = require("../controllers/auth.controller");
 
+// Rate limiting is recommended for these endpoints in production
 router.post("/register", validateRegistration, register);
 router.post("/login", validateLogin, login);
 router.patch("/location", auth, validateLocationUpdate, updateLocation);

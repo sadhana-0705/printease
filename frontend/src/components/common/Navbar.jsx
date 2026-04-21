@@ -38,6 +38,9 @@ export default function Navbar() {
               <Link to="/student/dashboard" className="text-[#ffffff] hover:text-[#f1c40f] transition-colors px-3 py-2 rounded-md hover:bg-[#8e44ad]/20 text-lg">
                 Dashboard
               </Link>
+              <Link to="/student/upload" className="text-[#ffffff] hover:text-[#f1c40f] transition-colors px-3 py-2 rounded-md hover:bg-[#8e44ad]/20 text-lg">
+                Upload Documents
+              </Link>
               <Link to="/student/orders" className="text-[#ffffff] hover:text-[#f1c40f] transition-colors px-3 py-2 rounded-md hover:bg-[#8e44ad]/20 text-lg">
                 My Orders
               </Link>

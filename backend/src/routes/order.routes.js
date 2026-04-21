@@ -63,6 +63,10 @@ router.delete(
   "/:orderId/clear",
   auth,
   role(["netcentre_admin", "netcentre_staff"]),
+  (req, res, next) => {
+    req.body.status = "cleared";
+    next();
+  },
   updateOrderStatus
 );
 
