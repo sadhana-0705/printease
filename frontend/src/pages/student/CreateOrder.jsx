@@ -214,7 +214,8 @@ export default function CreateOrder() {
             label="Cost Per Page (₹)"
             type="number"
             value={cp}
-            onChange={(e) => setCp(+e.target.value)}
+            readOnly
+            className="bg-gray-100 cursor-not-allowed text-gray-500 font-semibold"
           />
 
           <Input
