@@ -1,86 +1,157 @@
 # PrintEase 🖨️
 
-PrintEase is a hyper-local document printing and delivery platform designed to bridge the gap between students, local printing centers (Net Centres), and delivery partners.
+PrintEase is a hyper-local document printing and delivery platform that connects students, local printing centers (Net Centres), and delivery partners into a single seamless ecosystem.
+
+The platform simplifies the entire printing workflow — from document upload and print customization to real-time order tracking and doorstep delivery.
+
+---
 
 ## 🚀 Features
 
-### For Students
-- **Smart Ordering**: Upload documents and configure print settings (B&W/Color, Single/Double-sided, Binding).
-- **Real-time Pricing**: Automated cost calculation based on document properties and selected options.
-- **Service Discovery**: Find the nearest Net Centres using integrated Leaflet.js maps and geolocation.
-- **Live Tracking**: Monitor your order status from "Accepted" to "Delivered" on a real-time map.
+### 👨‍🎓 Student Module
+- Upload documents for printing
+- Configure print options:
+  - Black & White / Color
+  - Single-sided / Double-sided
+  - Binding options
+- Automatic real-time price calculation
+- Discover nearby Net Centres using geolocation and interactive maps
+- Live order tracking from acceptance to delivery
 
-### For Net Centres (Shop Owners)
-- **Order Management**: A dedicated dashboard to view, accept, and update the status of print jobs.
-- **Workflow Automation**: Transition orders through stages: Pending → Accepted → Printing → Ready.
-- **Document Access**: Securely access and download student-uploaded documents for printing.
+### 🏪 Net Centre Module
+- Dedicated dashboard for managing print requests
+- Accept and process incoming orders
+- Update order workflow:
+  - Pending → Accepted → Printing → Ready
+- Secure document access and download functionality
 
-### For Delivery Partners
-- **Logistics Dashboard**: View available "Ready" orders for delivery.
-- **Optimized Routing**: Clear navigation between Net Centres and student delivery locations.
+### 🚚 Delivery Partner Module
+- View available delivery orders
+- Pickup and deliver completed print jobs
+- Optimized navigation between shop and customer locations
+
+---
+
+## 🔐 Authentication & Security
+
+- JWT-based Authentication
+- Role-Based Access Control (RBAC)
+- Protected API routes
+- Secure document handling and access management
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React.js, Tailwind CSS, Vite, Leaflet.js (Maps), Context API.
-- **Backend**: Node.js, Express.js (v5), RESTful APIs.
-- **Database**: MongoDB with Mongoose ODM.
-- **Authentication**: JWT (JSON Web Tokens) with Role-Based Access Control (RBAC).
-- **Deployment**: Render (Auto-deployment via `render.yaml`).
+### Frontend
+- React.js
+- Vite
+- Tailwind CSS
+- Leaflet.js
+- Context API
+
+### Backend
+- Node.js
+- Express.js (v5)
+- RESTful APIs
+
+### Database
+- MongoDB
+- Mongoose ODM
+
+### Deployment
+- Render
+- render.yaml Blueprint Deployment
+
+---
 
 ## 📁 Project Structure
 
-```text
+```bash
 printease/
-├── backend/          # Node.js Express server
-├── frontend/         # React Vite application
-├── render.yaml       # Deployment configuration
-└── package.json      # Workspace settings
+├── backend/          # Express backend server
+├── frontend/         # React Vite frontend
+├── render.yaml       # Render deployment configuration
+└── package.json      # Workspace configuration
 ```
 
-## ⚙️ Setup & Installation
+---
+
+## ⚙️ Installation & Setup
 
 ### Prerequisites
 - Node.js (v18+)
 - MongoDB Atlas Account
 
-### Local Development
+### Clone the Repository
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/printease.git
-   cd printease
-   ```
+```bash
+git clone https://github.com/your-username/printease.git
+cd printease
+```
 
-2. **Install Dependencies**:
-   ```bash
-   # Install root, backend, and frontend dependencies
-   npm install
-   npm --prefix backend install
-   npm --prefix frontend install
-   ```
+### Install Dependencies
 
-3. **Environment Variables**:
-   Create a `.env` file in the `backend/` directory:
-   ```env
-   PORT=5000
-   MONGO_URI=your_mongodb_connection_string
-   JWT_SECRET=your_secure_secret
-   ```
+```bash
+npm install
+npm --prefix backend install
+npm --prefix frontend install
+```
 
-4. **Run the application**:
-   ```bash
-   # Runs both frontend and backend concurrently
-   npm run dev
-   ```
+### Configure Environment Variables
+
+Create a `.env` file inside the `backend/` directory:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secure_secret
+```
+
+### Run the Application
+
+```bash
+npm run dev
+```
+
+This starts both the frontend and backend concurrently.
+
+---
 
 ## 🌐 Deployment
 
-The project is pre-configured for deployment on **Render** using the `render.yaml` blueprint.
+The project is pre-configured for deployment on Render using the included `render.yaml` blueprint.
 
-1. Connect your GitHub repository to Render.
-2. Select the **Blueprint** option.
-3. Provide the `MONGO_URI` environment variable in the Render dashboard.
-4. Render will automatically build the frontend and serve it via the backend.
+### Deployment Steps
+
+1. Push the project to GitHub
+2. Connect the repository to Render
+3. Select the **Blueprint** deployment option
+4. Add required environment variables in Render:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secure_secret
+```
+
+### Render Automatically Handles
+- Dependency installation
+- Frontend build process
+- Backend deployment
+- Serving the React frontend through Express
+- Automatic redeployment on GitHub push
+
+---
+
+## 📌 Future Enhancements
+
+- Online payment integration
+- Push notifications for order updates
+- AI-based print cost estimation
+- Admin analytics dashboard
+- In-app messaging system
+
+---
 
 ## 📄 License
 
