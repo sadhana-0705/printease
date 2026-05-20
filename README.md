@@ -151,8 +151,5 @@ JWT_SECRET=your_secure_secret
 - Admin analytics dashboard
 - In-app messaging system
 
----
 
-## 📄 License
 
-This project is licensed under the ISC License.
